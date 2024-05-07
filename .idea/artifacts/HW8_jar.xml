@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="HW8:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/HW8_jar</output-path>
+    <root id="archive" name="HW8.jar">
+      <element id="module-output" name="planner_system" />
+    </root>
+  </artifact>
+</component>

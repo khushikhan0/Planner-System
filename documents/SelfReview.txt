@@ -1,0 +1,11 @@
+For this assignment, we realized just how important loose coupling was in design.
+One of the things we could've done earlier was plan our interfaces better. For us, this would
+include creating interfaces for Event and Schedule earlier, so that the view could call on them
+without needing access to one specific implementation. When getting the provider's code we realized
+that their view implementation was tightly coupled with their model and didn't delegate to their
+features interface at all, which in turn made it impossible for us to adapt our model to their view.
+Trying to integrate their code with ours while not changing their code really helped emphasize all
+the little ways we might not notice that our views relied too much on our model. Another thing we
+could have done differently from the start was to not have our controller open new event frames.
+Because of that, our controller would need a specific view implementation of the frame in order
+to open it which made the integration of our view with theirs a little harder.

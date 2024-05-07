@@ -1,0 +1,36 @@
+1. Design Critique
+        The design of the model was quite well done. It was pretty clear what each interface's role
+    was, which helped with making adapters that would take in their interfaces and value classes.
+    Our model was structured very similarly to theirs as well. However, the IUser design was not
+    very flexible. Our understanding was that each name was inherently unique, so we didn't really
+    think it was necessary to have a user id as well as a name.
+        The design of the view was tightly coupled with the model, which made reimplementation
+    difficult. Some of the methods that should've been delegated to the controller were in the view.
+    For example, the add calendar and save calendar functionalities were entirely inside the view.
+    There were no methods in the controller interface to address them. We also had to launch the
+    program using the view, when the controller should've had a launch method like createGame().
+
+2. Implementation Critique
+    Their implementation seemed to be good. We felt like the interfaces could have more methods as
+    sometimes it was hard to get certain aspects from the interfaces with the given methods. In
+    their view implementation, the constructors did a lot of the setting button functionality, and
+    it directly made calls to change the model. Other than that, their interfaces included the most
+    necessary methods and their view functionality looked like it would work well, given the correct
+    model. Overall, it was a good implementation and the only thing we would change was uncoupling
+    the view so that if someone were to reuse the code again, they wouldn’t need to manually edit
+    anything in the view!
+
+3. Documentation Critique
+    The documentation in the view was good. It was easy to follow, which made it easy to tell what
+    each class' purpose was. We were able to figure out how they implemented their view quite
+    quickly. The model's documentation was good, but it could've been improved in some small ways.
+    It was a little difficult to tell how the system was designed, for example, how it kept track
+    of users and schedules, so when we implemented it to fit our code some parts of their design
+    were left out, such as the IUser interface.
+
+4. Design/code limitations & Suggestions on how to address them
+    Having an IUser class might leave some room for error, since it means there's a lot more to
+    keep track of (user ids and names). Since we were told to assume that names were unique, perhaps
+    for this assignment, it would be better to make the design of a user more flexible.
+    We also suggest taking out some of the controller related methods in the view and making sure
+    the controller handles it instead.
