@@ -1,52 +1,12 @@
 # README for Weekly Planner
 
-### Overview:  
+## Overview:  
 This codebase is creating a planner system to help make it easier to keep track all the
 events in people's lives. A planner system contains multiple users, each with their own
 schedule. In this schedule, people can add the events they have to attend in the week.
 This codebase assumes that the implementer can read Java to an intermediate degree.
 
-### Quick Start: 
-How to get started with our code:
-
-// Upload an a user to the system with an existing .xml schedule
-PlannerSystem system = new PlannerSystem();
-system.addUserFromFile(String user, File file, FileHandler handler);
-  - how to instantiate our FileHandler: new XMLFileHander();
-
-// Pick a user's schedule to display
-Schedule scheduleToDisplay = system.pickCurrentDisplay(String user);
-  - user must exist in the system
-
-// create an XML file from a user's schedule
-system.makeUserFile(String user, FileHandler fileHandler);
-  - will create an XML file locally
-
-// to remove a user
-system.modifySystem(String user, Schedule schedule, false);
-
-// to add a user with a schedule (not in xml)
-system.modifySystem(String user, Schedule schedule, true);
-
-// to schedule an event for all users in its invitee list
-system.scheduleEvent(Event event);
-
-// to remove an event for all users if they are host, or just one if they aren't host
-system.removeEvent(Event event);
-
-// to make a new empty schedule with a user
-Schedule schedule = new Schedule(String user);
-
-// to make your own events
-Event event = new Event(String name, String location, boolean isOnline, Day startDay,
-                             Time startTime, Day endDay, Time endTime, List<String> invitees)
-...
-            
-//get a view of all the events in your week
-PlannerView plannerView = new PlannerSystemView(yourSchedule);
-plannerView.render();
-
-### Key Components:
+## Key Components:
 There are four main components to this planner:
         1. Model: The model handles the schedule's data by allowing you to add events to
                 schedules, remove events from schedules, modify events, etc. It makes it easier
@@ -64,7 +24,7 @@ file and upload file methods allow for a handler to be taken in-- in which in th
 handler could allow conversion between different file types etc. This helps with encapsulation
 and reusability later.
 
-### Key Subcomponents:
+## Key Subcomponents:
 Within the key components of this planner:
         1. Model: In the model, a PlannerSystem has users and schedules. Each user has an
                 individual Schedule. A Schedule has the user and a list of events. An Event has a
@@ -74,7 +34,7 @@ Within the key components of this planner:
         3. Filehandler: The filehandler has a XMLFileHandler which can read from files and write to
                 files. It also allows you to convert a Schedule to an XML file and vice versa.
 
-### Source Organization:
+## Source Organization:
     planner_system
         src (contains 4 main components)
             controller
@@ -99,7 +59,7 @@ Within the key components of this planner:
             view
                 test for PlannerSystemView
 
-### Adapters:
+## Adapters:
 - Model:
         - We created an Adapter for all of the model interfaces
         - MainSystem:
