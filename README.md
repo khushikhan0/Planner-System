@@ -57,7 +57,7 @@ Within the key components of this planner:
             view
                 test for PlannerSystemView
 
-### Commands:
+## Commands:
 - No args: OG view and anytime strategy
 - First arg: "workday" - workday Strategy, OG view; anything else will give anytime strat
 - Second arg: 2 - other view; anything else will give og view
